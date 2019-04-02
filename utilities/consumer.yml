@@ -20,5 +20,7 @@ spec:
       value: "test-db-topics"
     - name: KAFKA_CONSUMER_OFFSET_RESET
       value: "earliest"
+    - name: KAFKA_AVRO
+      value: ""
     imagePullPolicy: Always
   restartPolicy: Never
