@@ -1,0 +1,39 @@
+# apiVersion: batch/v1
+# kind: Job
+# metadata:
+#   name: delete-topics
+#   namespace: kafka
+# spec:
+#   template:
+#     metadata:
+#       name: delete-topics
+#     spec:
+#       containers:
+#       - name: kafka
+#         image: solsson/kafka:2.1.1@sha256:8bc8242c649c395ab79d76cc83b1052e63b4efea7f83547bf11eb3ef5ea6f8e1
+#         env:
+#         - name: BOOTSTRAP
+#           value: bootstrap.kafka:9092
+#         # the following must be edited per job, must be a single topic or comma separated list of topics 
+#         - name: TOPIC_NAME
+#           value: "test-raw-messages"
+#         command:
+#         - /bin/bash
+#         - -ce
+#         - >
+#           if [ -z "$TOPICS" ];  then
+#             echo "Please set the TOPICS env (comma-separated) and re-create the job"
+#             tail -f /dev/null
+#           fi
+
+#           echo "# TOPICS TO DELETE:";
+#           echo -n $TOPICS | sed 's/,/\n/g';
+
+#           ./bin/kafka-topics.sh --zookeeper $ZOOKEEPER --delete --topic $TOPICS;
+
+#           echo "# Finished deleting topics... Ending Job!"
+#       restartPolicy: Never
+#   backoffLimit: 3
+
+
+########### UNFINISHED ###########

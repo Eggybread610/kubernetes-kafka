@@ -37,24 +37,21 @@ spec:
         - name: GROUP_ID
           value: "1"
         - name: CONFIG_STORAGE_TOPIC
-          # needs good naming structure based on cluster name/dns and pods
           value: debezium_configs
         - name: OFFSET_STORAGE_TOPIC
-          # needs good naming structure based on cluster name/dns and pods
           value: debezium_offsets
         - name: STATUS_STORAGE_TOPIC
-          # needs good naming structure based on cluster name/dns and pods
           value: debezium_statuses
-        - name: KEY_CONVERTER
-          value: io.confluent.connect.avro.AvroConverter
+        # - name: KEY_CONVERTER
+        #   value: io.confluent.connect.avro.AvroConverter
         - name: VALUE_CONVERTER
           value: io.confluent.connect.avro.AvroConverter
         - name: INTERNAL_KEY_CONVERTER
           value: org.apache.kafka.connect.json.JsonConverter
         - name: INTERNAL_VALUE_CONVERTER
           value: org.apache.kafka.connect.json.JsonConverter
-        - name: CONNECT_KEY_CONVERTER_SCHEMA_REGISTRY_URL
-          value: http://avro-schemas:80
+        # - name: CONNECT_KEY_CONVERTER_SCHEMA_REGISTRY_URL
+        #   value: http://avro-schemas:80
         - name: CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL
           value: http://avro-schemas:80
         - name: JMX_PORT
