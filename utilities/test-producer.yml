@@ -10,6 +10,8 @@ spec:
     env:
     - name: PYTHONUNBUFFERED
       value: "1"
+    - name: TIMESTAMP_TEST
+      value: ""
     - name: KAFKA_AVRO
       value: ""
     - name: AVRO_KEY
