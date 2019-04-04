@@ -42,8 +42,8 @@ spec:
           value: debezium_offsets
         - name: STATUS_STORAGE_TOPIC
           value: debezium_statuses
-        # - name: KEY_CONVERTER
-        #   value: io.confluent.connect.avro.AvroConverter
+        - name: KEY_CONVERTER
+          value: org.apache.kafka.connect.json.JsonConverter # io.confluent.connect.avro.AvroConverter
         - name: VALUE_CONVERTER
           value: io.confluent.connect.avro.AvroConverter
         - name: INTERNAL_KEY_CONVERTER
