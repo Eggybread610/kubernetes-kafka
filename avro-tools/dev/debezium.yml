@@ -43,15 +43,15 @@ spec:
         - name: STATUS_STORAGE_TOPIC
           value: debezium_statuses
         - name: KEY_CONVERTER
-          value: org.apache.kafka.connect.json.JsonConverter # io.confluent.connect.avro.AvroConverter
+          value: io.confluent.connect.avro.AvroConverter
         - name: VALUE_CONVERTER
           value: io.confluent.connect.avro.AvroConverter
         - name: INTERNAL_KEY_CONVERTER
           value: org.apache.kafka.connect.json.JsonConverter
         - name: INTERNAL_VALUE_CONVERTER
           value: org.apache.kafka.connect.json.JsonConverter
-        # - name: CONNECT_KEY_CONVERTER_SCHEMA_REGISTRY_URL
-        #   value: http://avro-schemas:80
+        - name: CONNECT_KEY_CONVERTER_SCHEMA_REGISTRY_URL
+          value: http://avro-schemas:80
         - name: CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL
           value: http://avro-schemas:80
         - name: JMX_PORT
